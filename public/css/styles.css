@@ -8,6 +8,9 @@ body{
     display:flex;
     flex-direction: column;
     min-height: 100vh;
+
+    background-repeat: no-repeat;
+    background-position: 75% 5%;
 }
 
 .main-content{
@@ -37,4 +40,17 @@ header a{
 }
 .portait{
     width:350px;
+}
+
+input {
+    border: 1px solid #cccccc;
+    padding: 8px;
+}
+
+button {
+    cursor: pointer;
+    border: 1px solid #888888;
+    background: #888888;
+    color: white;
+    padding: 8px;
 }

@@ -11,6 +11,7 @@ weatherForm.addEventListener('submit',(e) => {
     msg1.style.color = msg2.style.color
     msg2.textContent=''
     msg1.textContent='Loading .... '
+    document.body.style.backgroundImage = 'none'
     fetch('/weather?address='+location).then( (response) => {
         response.json().then( (data) => {
             if(data.error){
@@ -21,6 +22,14 @@ weatherForm.addEventListener('submit',(e) => {
             else {
                 msg1.textContent =(data.location )
                 msg2.textContent = ( data.forecast)
+                if(data.is_day === 'yes'){
+                    
+                    document.body.style.backgroundImage = "url('./img/day.png')";
+                }
+                else{
+                    
+                    document.body.style.backgroundImage = "url('./img/night.png')";
+                }
             }
         })
     })
